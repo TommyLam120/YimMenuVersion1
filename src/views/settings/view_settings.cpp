@@ -66,5 +66,17 @@ namespace big
 			g.write_default_config();
 			g.load();
 		}
+		if (ImGui::Button("VIEW_SETTINGS_STOP_LOADING"_T.data()))
+		{
+			if (CAM::IS_SCREEN_FADED_OUT())
+			{
+				CAM::DO_SCREEN_FADE_IN(0);
+			}
+			SCRIPT::SHUTDOWN_LOADING_SCREEN();
+		}
+		if (ImGui::Button("VIEW_SETTINGS_STOP_PLAYER_SWITCH"_T.data()))
+		{
+			STREAMING::STOP_PLAYER_SWITCH();
+		}
 	}
 }
